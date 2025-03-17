@@ -1,6 +1,7 @@
 - pip install numpy
 - pip install swig
-- brew install bazel
+- "brew install bazel"-- doesnt work; seems homebrew has been removed by mac due to it being marked too unsafe.
+- conda install bazel seems to work; 
 - Python 3.13.2 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 12:54:57) [Clang 14.0.6 ] on darwin
 - 
 <p align="center">
