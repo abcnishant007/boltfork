@@ -49,7 +49,9 @@ OS
 ```
 Mac 2020 pro: 14.6.1 Sonoma
 ```
-
+**Special notes for experiments**
+- The fig2 implies everything else apart from cifar 10;
+- The fig1 implies cifar 10.
 
 - "brew install bazel"-- doesnt work; seems homebrew has been removed by mac due to it being marked too unsafe.
 - conda install bazel seems to work;
