@@ -1,11 +1,64 @@
-- pip install numpy
-- pip install swig
+
+```
+Python 3.7.16 (default, Jan 17 2023, 09:28:58) 
+[Clang 14.0.6 ] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+```
+
+```
+numpy was downgraded for numba to work
+```
+
+```
+The kmc2 library https://github.com/obachem/kmc2 does not work. This initialisation has been removed and instead, we have just used the other initialisation mechanism.
+```
+
+Requirements.txt is shown below
+in order to run the `python -m python.amm_main` and this should be run inside the experiments folder.
+```bash
+charset-normalizer==3.4.1
+cycler==0.11.0
+fonttools==4.38.0
+idna==3.10
+importlib-metadata==6.7.0
+joblib==1.3.2
+kiwisolver==1.4.5
+llvmlite==0.39.1
+matplotlib==3.5.3
+nose==1.3.7
+numba==0.56.4
+numpy==1.18.0
+packaging==24.0
+pandas==1.3.5
+Pillow==9.5.0
+pyparsing==3.1.4
+python-dateutil==2.9.0.post0
+pytz==2025.1
+requests==2.31.0
+scikit-learn==1.0.2
+scipy==1.7.3
+seaborn==0.12.2
+six==1.17.0
+threadpoolctl==3.1.0
+torch==1.13.1
+```
+
+
+
+OS
+```
+Mac 2020 pro: 14.6.1 Sonoma
+```
+
+
 - "brew install bazel"-- doesnt work; seems homebrew has been removed by mac due to it being marked too unsafe.
 - conda install bazel seems to work;
-- pip install numba
-- 
-- Python 3.13.2 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 12:54:57) [Clang 14.0.6 ] on darwin
-- 
+- pip install swif if needed later on
+
+
+
+
+  
 <p align="center">
   <img src="https://github.com/dblalock/bolt/blob/master/assets/bolt.jpg?raw=true" alt="Bolt" width="611px" height="221px"/>
   <!-- <img src="https://github.com/dblalock/bolt/blob/master/assets/bolt.jpg?raw=true" alt="Bolt" width="685px" height="248px"/> -->
