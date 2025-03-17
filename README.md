@@ -10,6 +10,7 @@ files.py has two versions; (overloaded) one inside the dataset/files.py; Other i
 
 ```
 
+The changed version is [https://github.com/dblalock/bolt/compare/master...abcnishant007:boltfork:master](https://github.com/dblalock/bolt/compare/master...abcnishant007:boltfork:master) 
 ```
 Some parts of the code are in python2.7, 
 Those have been changed; But kmc2 is only available for python2.7 in pip. Now, the algo doesn't seem to run when we use the "subspaces" option.   File "/Users/nishant/Documents/GitHub/boltfork/python/bolt/bolt_api.py", line 91, in kmeans
