@@ -1,5 +1,31 @@
 To run the shell scripts inside experiments folder, we need sudo rights.
 
+
+```python
+1. changed all "from . " to ""
+2. changed all "from ." to "from "
+so that we can run without the module (-m) easily in pyCharm; much easier to debug
+
+files.py has two versions; (overloaded) one inside the dataset/files.py; Other inside the python/files.py 
+
+```
+
+```
+Some parts of the code are in python2.7, 
+Those have been changed; But kmc2 is only available for python2.7 in pip. Now, the algo doesn't seem to run when we use the "subspaces" option.   File "/Users/nishant/Documents/GitHub/boltfork/python/bolt/bolt_api.py", line 91, in kmeans
+    raise ValueError("K must be a square number if init='subspaces'")
+ValueError: K must be a square number if init='subspaces' 
+
+So, now we seem to have hit a wall! 
+
+Based on the "subspaces" library, we hit recursion depth! :( 
+  File "mtrand.pyx", line 244, in numpy.random.mtrand.RandomState.seed
+  File "_mt19937.pyx", line 166, in numpy.random._mt19937.MT19937._legacy_seeding
+RecursionError: maximum recursion depth exceeded while calling a Python object 
+
+
+```
+
 ```
 Python 3.7.16 (default, Jan 17 2023, 09:28:58) 
 [Clang 14.0.6 ] :: Anaconda, Inc. on darwin
