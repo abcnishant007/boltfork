@@ -1,3 +1,4 @@
+To run the shell scripts inside experiments folder, we need sudo rights.
 
 ```
 Python 3.7.16 (default, Jan 17 2023, 09:28:58) 
