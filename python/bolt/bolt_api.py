@@ -3,9 +3,9 @@
 # TODO maybe have sklearn transforms for dot prod and Lp dists
 # TODO add L1 distance
 
-from . import bolt  # inner bolt because of SWIG
+from python import bolt  # inner bolt because of SWIG
 
-import kmc2  # state-of-the-art kmeans initialization (as of NIPS 2016)
+# import kmc2  # state-of-the-art kmeans initialization (as of NIPS 2016)
 import numpy as np
 from sklearn import cluster, exceptions
 
@@ -79,7 +79,7 @@ def _ensure_num_cols_multiple_of(X, multiple_of):
 
 # ================================================================ kmeans
 
-def kmeans(X, k, max_iter=16, init='kmc2'):
+def kmeans(X, k, max_iter=16, init='subspaces'):
     X = X.astype(np.float32)
     np.random.seed(123)
 
@@ -88,17 +88,18 @@ def kmeans(X, k, max_iter=16, init='kmc2'):
     if init == 'subspaces':
         sqrt_k = int(np.sqrt(k) + .5)
         if sqrt_k ** 2 != k:
-            raise ValueError("K must be a square number if init='subspaces'")
+            do_nothing = True
+            # raise ValueError("K must be a square number if init='subspaces'")
 
         _, D = X.shape
-        centroids0, _ = kmeans(X[:, :D/2], sqrt_k, max_iter=1)
-        centroids1, _ = kmeans(X[:, D/2:], sqrt_k, max_iter=1)
+        centroids0, _ = kmeans(X[:, :D//2], sqrt_k, max_iter=1)
+        centroids1, _ = kmeans(X[:, D//2:], sqrt_k, max_iter=1)
         seeds = np.empty((k, D), dtype=np.float32)
         for i in range(sqrt_k):
             for j in range(sqrt_k):
                 row = i * sqrt_k + j
-                seeds[row, :D/2] = centroids0[i]
-                seeds[row, D/2:] = centroids1[j]
+                seeds[row, :D//2] = centroids0[i]
+                seeds[row, D//2:] = centroids1[j]
 
     elif init == 'kmc2':
         seeds = kmc2.kmc2(X, k).astype(np.float32)
