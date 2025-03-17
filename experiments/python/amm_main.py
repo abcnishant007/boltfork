@@ -6,12 +6,12 @@ import pprint
 import scipy
 import time
 
-from . import amm
-from . import matmul_datasets as md
-from . import pyience as pyn
-from . import compress
+import amm
+import matmul_datasets as md
+import pyience as pyn
+import compress
 
-from . import amm_methods as methods
+import amm_methods as methods
 
 from joblib import Memory
 _memory = Memory('.', verbose=0)

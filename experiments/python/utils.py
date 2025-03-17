@@ -6,7 +6,7 @@ from sklearn import cluster
 from scipy import signal
 # import types
 
-import kmc2  # state-of-the-art kmeans initialization (as of NIPS 2016)
+# import kmc2  # state-of-the-art kmeans initialization (as of NIPS 2016)
 
 from joblib import Memory
 _memory = Memory('.', verbose=0)
@@ -173,7 +173,7 @@ def knn(X, q, k, dist_func=dists_sq):
 
 
 @_memory.cache
-def kmeans(X, k, max_iter=16, init='kmc2', return_sse=False):
+def kmeans(X, k, max_iter=16, init='subspaces', return_sse=False):
     X = X.astype(np.float32)
 
     # handle fewer nonzero rows than centroids (mostly just don't choke

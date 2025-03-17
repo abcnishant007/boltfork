@@ -1,9 +1,15 @@
 #!/usr/bin/env python
-
+import os.path
+import sys
 import time
 import numpy as np
+from smartprint import smartprint as sprint
 
-from .utils import kmeans, orthonormalize_rows, random_rotation
+# sys.path.append(os.path.dirname(__file__))
+print (os.path.dirname(__file__))
+sprint (os.getcwd())
+
+from utils import kmeans, orthonormalize_rows, random_rotation
 
 from joblib import Memory
 _memory = Memory('.', verbose=0)

@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from io import StringIO
 
-from . import amm_methods as methods
+import amm_methods as methods
 
 from joblib import Memory
 _memory = Memory('.', verbose=1)
@@ -270,7 +270,7 @@ def scalar_quantized_amm_timings():
     # df = pd.DataFrame.from_records(timings)
 
 
-# output from ./GEMMsBenchmark after defining FBGEMM_MEASURE_TIME_BREAKDOWN
+# output from /GEMMsBenchmark after defining FBGEMM_MEASURE_TIME_BREAKDOWN
 # in include/fbgemm/Fbgemm.h; recorded here since not in a results file
 '''
      M,      N,      K,             Type,     Packing (us),      Kernel (us),    Postproc (us),       Total (us),  GOPs
@@ -754,14 +754,14 @@ def ucr_amm(k=128, problem='rbf'):
 
 
 def main():
-    # print(encode_timings())
-    # print(lut_timings())
-    # print(scan_timings())
-    # print(bolt_amm_timings())
-    # print(mithral_amm_timings())
-    # print(dense_amm_timings())
-    # print(osnap_amm_timings())
-    # print(sparse_amm_timings())
+    print(encode_timings())
+    print(lut_timings())
+    print(scan_timings())
+    print(bolt_amm_timings())
+    print(mithral_amm_timings())
+    print(dense_amm_timings())
+    print(osnap_amm_timings())
+    print(sparse_amm_timings())
     # print(cifar10_amm())
     # print(cifar100_amm())
     # print(caltech_amm(filt='sobel'))
@@ -785,7 +785,7 @@ def main():
     # df = cifar10_amm()
     # df = cifar100_amm()
     df = caltech_amm(filt='dog5x5')
-    # df = caltech_amm(filt='sobel')
+    df = caltech_amm(filt='sobel')
     print(sorted(df['method'].unique()))
     # # df = df.loc[df['method'].isin(['Brute Force', 'Mithral', 'SparsePCA'])]
     # df = df.loc[df['method'].isin(['Exact', 'ScalarQuantize', 'MADDNESS', 'SparsePCA'])]
@@ -794,4 +794,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+   main()

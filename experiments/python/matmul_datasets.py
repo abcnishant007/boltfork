@@ -8,9 +8,9 @@ import numpy as np
 from sklearn import linear_model
 from scipy import signal
 
-from python.datasets import caltech, sharee, incart, ucr
-from python import misc_algorithms as algo
-from python import window
+from datasets import caltech, sharee, incart, ucr
+import misc_algorithms as algo
+import window
 
 from joblib import Memory
 # _memory = Memory('.', verbose=0, compress=7)  # compression between 1 and 9

@@ -9,9 +9,9 @@ import seaborn as sb
 import pandas as pd
 import pathlib as pl
 
-# from . import files
-from . import amm_results2 as res
-# from . import amm_methods as ameth
+# import files
+import amm_results2 as res
+# import amm_methods as ameth
 
 # sb.set_context('poster')
 # sb.set_context('talk')
@@ -1020,15 +1020,15 @@ def ucr_fig2(x_metric='Speedup', y_metric='Relative Accuracy',
 
 
 def main():
-    scan_speed_fig()
-    encode_speed_fig()
-    lut_speed_fig()
-    fig1()
-    ucr_fig2()
+    # scan_speed_fig()
+    # encode_speed_fig()
+    # lut_speed_fig()
+    # fig1()
+    # ucr_fig2()
     caltech_fig()
     # caltech_fig(y_metric='1 - NMSE')
     # caltech_fig(x_metric='ops', y_metric='1 - NMSE')
-    cifar_fig()
+    # cifar_fig()
     # cifar_fig(y_metric='1 - NMSE')
     # cifar_fig(x_metric='ops')
     # cifar_fig(x_metric='ops', y_metric='1 - NMSE')

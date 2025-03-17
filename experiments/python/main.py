@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import functools
+import sys
+
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -10,6 +12,8 @@ import time
 
 from collections import namedtuple
 
+sys.path.append((os.path.dirname(__file__)))
+print (os.getcwd())
 # import datasets
 import files
 import product_quantize as pq

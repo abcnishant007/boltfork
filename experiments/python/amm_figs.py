@@ -7,9 +7,9 @@ import seaborn as sb
 import pandas as pd
 import pathlib as pl
 
-# from . import files
-from . import amm_results as res
-from . import amm_methods as ameth
+# import files
+import amm_results as res
+import amm_methods as ameth
 
 
 sb.set_context('poster')

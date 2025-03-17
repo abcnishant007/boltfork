@@ -8,7 +8,7 @@ import numba
 from sklearn.decomposition import PCA
 from sklearn import linear_model
 
-from . import subspaces as subs
+import subspaces as subs
 
 from joblib import Memory
 _memory = Memory('.', verbose=0)

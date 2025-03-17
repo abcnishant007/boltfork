@@ -5,7 +5,7 @@
 import numpy as np
 from numpy.lib.stride_tricks import as_strided as ast
 
-# from .arrays import normalizeMat
+# from arrays import normalizeMat
 
 
 def norm_shape(shape):
